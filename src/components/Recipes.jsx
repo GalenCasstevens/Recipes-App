@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Recipes() {
 	const [recipes, setRecipes] = useState([]);
@@ -10,11 +10,19 @@ function Recipes() {
 
 	const fetchRecipes = async () => {
 		const response = await fetch(
-			`${process.env.REACT_APP_SPOONACULAR_URL}/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}`
+			`${process.env.REACT_APP_SPOONACULAR_URL}/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
 		);
+
+		const data = await response.json();
+
+		setRecipes(data.recipes);
+		console.log(recipes);
+		setLoading(false);
 	};
 
-	return <div>recipe results</div>;
+	return (
+		<div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2"></div>
+	);
 }
 
 export default Recipes;
