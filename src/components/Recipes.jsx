@@ -2,24 +2,23 @@ import { useEffect, useState } from 'react';
 import RecipeData from '../data/RecipeData';
 
 function Recipes() {
-	const [recipes, setRecipes] = useState([]);
+	const [recipes, setRecipes] = useState(RecipeData.recipes);
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		fetchRecipes();
-		// setRecipes(RecipeData.recipes);
-	}, []);
+	// useEffect(() => {
+	// 	fetchRecipes();
+	// }, []);
 
-	const fetchRecipes = async () => {
-		const response = await fetch(
-			`${process.env.REACT_APP_SPOONACULAR_URL}/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
-		);
+	// const fetchRecipes = async () => {
+	// 	const response = await fetch(
+	// 		`${process.env.REACT_APP_SPOONACULAR_URL}/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
+	// 	);
 
-		const data = await response.json();
+	// 	const data = await response.json();
 
-		setRecipes(data.recipes);
-		setLoading(false);
-	};
+	// 	setRecipes(data.recipes);
+	// 	setLoading(false);
+	// };
 
 	if (recipes && recipes !== null) {
 		return (

@@ -7,16 +7,6 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<Recipes />
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>{process.env.REACT_APP_SPOONACULAR_URL}</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
 			</header>
 		</div>
 	);
