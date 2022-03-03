@@ -1,15 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Recipes from './components/Recipes';
+import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
-				<Recipes />
-			</header>
-		</div>
-	);
+	return <Header />;
 }
 
 export default App;
