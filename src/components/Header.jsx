@@ -5,7 +5,7 @@ function Header() {
 		<Navbar bg="primary" variant="dark">
 			<Container>
 				<Navbar.Brand href="#">
-					<h3>Recipes App</h3>
+					<h3 className="app-title">Recipes App</h3>
 				</Navbar.Brand>
 				{/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
