@@ -2,10 +2,12 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 function Header() {
 	return (
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="primary" variant="dark">
 			<Container>
-				<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
+				<Navbar.Brand href="#">
+					<h3>Recipes App</h3>
+				</Navbar.Brand>
+				{/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
 						<Nav.Link href="#home">Home</Nav.Link>
@@ -22,7 +24,7 @@ function Header() {
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
-				</Navbar.Collapse>
+				</Navbar.Collapse> */}
 			</Container>
 		</Navbar>
 	);
