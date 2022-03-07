@@ -35,7 +35,12 @@ function RecipeList() {
 								<h5 className="recipe-title">
 									<strong>{recipe.title}</strong>
 								</h5>
-								<p>Ingredients: {recipe.extendedIngredients[0].name}</p>
+								<p>
+									Ingredients:
+									{recipe.extendedIngredients.map((ingredient, index) => {
+										return <span>{ingredient.name}, </span>;
+									})}
+								</p>
 							</Col>
 						</Row>
 					</Container>
