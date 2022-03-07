@@ -35,10 +35,12 @@ function RecipeList() {
 								<h5 className="recipe-title">
 									<strong>{recipe.title}</strong>
 								</h5>
-								<p>
-									Ingredients:
+								<p className="ingredients">
+									Ingredients:&nbsp;
 									{recipe.extendedIngredients.map((ingredient, index) => {
-										return <span>{ingredient.name}, </span>;
+										if (recipe.extendedIngredients.length - 1 !== index)
+											return <span>{ingredient.name}, </span>;
+										else return <span>{ingredient.name}</span>;
 									})}
 								</p>
 							</Col>
