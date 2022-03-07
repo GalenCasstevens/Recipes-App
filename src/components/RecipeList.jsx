@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Container, Row, Col } from 'react-bootstrap';
 import RecipeData from '../data/RecipeData';
 
 function RecipeList() {
@@ -25,7 +25,21 @@ function RecipeList() {
 	return (
 		<ListGroup as="ul" className="recipe-list">
 			{recipes.map((recipe) => (
-				<ListGroup.Item as="li">{recipe.title}</ListGroup.Item>
+				<ListGroup.Item as="li">
+					<Container fluid>
+						<Row>
+							<Col xs={2}>
+								<img src={recipe.image} alt="" />
+							</Col>
+							<Col xs={10}>
+								<h5 className="recipe-title">
+									<strong>{recipe.title}</strong>
+								</h5>
+								<p>Ingredients: {recipe.extendedIngredients[0].name}</p>
+							</Col>
+						</Row>
+					</Container>
+				</ListGroup.Item>
 			))}
 		</ListGroup>
 	);
