@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ListGroup, Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
 
 function RecipeList() {
@@ -34,7 +35,9 @@ function RecipeList() {
 							<Col xs={10}>
 								<div className="recipe-info">
 									<h5 className="recipe-title">
-										<strong>{recipe.title}</strong>
+										<Link to={`/recipe/${recipe.id}`}>
+											<strong>{recipe.title}</strong>
+										</Link>
 									</h5>
 									<p className="ingredients">
 										Ingredients:&nbsp;
