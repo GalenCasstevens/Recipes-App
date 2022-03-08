@@ -61,12 +61,16 @@ div.row > * {
 }
 
 .recipe-list li img {
-	width: 90%;
+	width: 100%;
 }
 
 .recipe-title {
 	padding-top: 10px;
-	font-size: 1.2em;
+	font-size: 1.15em;
+}
+
+.recipe-info {
+	padding-left: 10px;
 }
 
 .ingredients {

@@ -32,17 +32,19 @@ function RecipeList() {
 								<img src={recipe.image} alt="" />
 							</Col>
 							<Col xs={10}>
-								<h5 className="recipe-title">
-									<strong>{recipe.title}</strong>
-								</h5>
-								<p className="ingredients">
-									Ingredients:&nbsp;
-									{recipe.extendedIngredients.map((ingredient, index) => {
-										if (recipe.extendedIngredients.length - 1 !== index)
-											return <span>{ingredient.name}, </span>;
-										else return <span>{ingredient.name}</span>;
-									})}
-								</p>
+								<div className="recipe-info">
+									<h5 className="recipe-title">
+										<strong>{recipe.title}</strong>
+									</h5>
+									<p className="ingredients">
+										Ingredients:&nbsp;
+										{recipe.extendedIngredients.map((ingredient, index) => {
+											if (recipe.extendedIngredients.length - 1 !== index)
+												return <span>{ingredient.name}, </span>;
+											else return <span>{ingredient.name}</span>;
+										})}
+									</p>
+								</div>
 							</Col>
 						</Row>
 					</Container>
