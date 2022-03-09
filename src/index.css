@@ -51,10 +51,14 @@ div.row > * {
 	padding-right: 0px;
 }
 
-.recipe-list {
+.recipe-list-page {
 	max-width: 75%;
 	margin: 50px auto 0 auto;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
+}
+
+.recipe-list {
+	padding-bottom: 15px;
 }
 
 .recipe-list li .recipe-title {
