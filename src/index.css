@@ -51,10 +51,14 @@ div.row > * {
 	padding-right: 0px;
 }
 
+ul.pagination {
+	margin-bottom: 0;
+}
+
 .recipe-list-page {
 	max-width: 75%;
-	margin: 50px auto 0 auto;
-	padding-bottom: 20px;
+	margin: 30px auto 0 auto;
+	padding-bottom: 30px;
 }
 
 .recipe-list {
