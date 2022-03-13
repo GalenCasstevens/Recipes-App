@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ListGroup, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
@@ -6,7 +6,7 @@ import Pagination from './Pagination';
 
 function RecipeList() {
 	const [recipes, setRecipes] = useState(RecipeData.recipes);
-	const [recipesPerPage, setRecipesPerPage] = useState(7);
+	const [recipesPerPage, setRecipesPerPage] = useState(6);
 	const [currentRecipes, setCurrentRecipes] = useState(
 		RecipeData.recipes.slice(0, recipesPerPage)
 	);
@@ -38,7 +38,7 @@ function RecipeList() {
 	};
 
 	return (
-		<div className="recipe-list-page">
+		<div className="recipe-list-container">
 			<ListGroup as="ul" className="recipe-list">
 				{currentRecipes.map((recipe, index) => (
 					<ListGroup.Item as="li">

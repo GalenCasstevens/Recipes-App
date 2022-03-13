@@ -38,7 +38,13 @@ header {
 	padding: 0 20px;
 }
 
-.app-title {
+.navbar-dark .navbar-brand a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.app-title,
+.recipe-detail-title {
 	font-family: 'Yellow Ginger';
 }
 
@@ -59,7 +65,7 @@ li.page-item {
 	border: none;
 }
 
-.recipe-list-page {
+.recipe-list-container {
 	max-width: 85%;
 	margin: 30px auto 0 auto;
 	padding-bottom: 30px;
@@ -110,4 +116,9 @@ li.active a {
 	font-family: Roboto;
 	font-size: 1.05em;
 	padding-right: 2px;
+}
+
+.recipe-detail-container {
+	margin: 30px auto 0 auto;
+	padding-bottom: 30px;
 }
