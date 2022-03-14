@@ -5,6 +5,7 @@ import RecipeData from '../data/RecipeData';
 import Pagination from './Pagination';
 
 function RecipeList() {
+	const MAX_INGREDIENTS_DISP = 5;
 	const [recipes, setRecipes] = useState(RecipeData.recipes);
 	const [recipesPerPage, setRecipesPerPage] = useState(6);
 	const [currentRecipes, setCurrentRecipes] = useState(
@@ -56,10 +57,17 @@ function RecipeList() {
 										</h5>
 										<p className="ingredients">
 											Ingredients:&nbsp;
-											{recipe.extendedIngredients.map((ingredient, index) => {
-												if (recipe.extendedIngredients.length - 1 !== index)
+											{recipe.extendedIngredients.map((ingredient, ind) => {
+												var maxInd = recipe.extendedIngredients.length - 1;
+												if (ind === maxInd && maxInd >= MAX_INGREDIENTS_DISP)
+													return <span>{ingredient.name}...</span>;
+												else if (
+													ind !== maxInd &&
+													ind < MAX_INGREDIENTS_DISP - 1
+												)
 													return <span>{ingredient.name}, </span>;
-												else return <span>{ingredient.name}</span>;
+												else if (maxInd < MAX_INGREDIENTS_DISP)
+													return <span>{ingredient.name}</span>;
 											})}
 										</p>
 									</div>

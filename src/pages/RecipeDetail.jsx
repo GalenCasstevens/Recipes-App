@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
+import Image from 'react-bootstrap/Image';
 
 function RecipeDetail() {
 	const params = useParams();
@@ -29,6 +30,7 @@ function RecipeDetail() {
 		<div className="recipe-detail-container">
 			<h4 className="recipe-detail-title">{recipe.title}</h4>
 			<hr />
+			<Image id="recipe-detail-image" src={recipe.image} thumbnail={true} />
 		</div>
 	);
 }
