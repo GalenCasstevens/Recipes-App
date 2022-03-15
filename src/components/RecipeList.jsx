@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ListGroup, Container, Row, Col } from 'react-bootstrap';
+import { ListGroup, Container, Row, Col, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
 import Pagination from './Pagination';
@@ -50,26 +50,36 @@ function RecipeList() {
 								</Col>
 								<Col xs={10}>
 									<div className="recipe-info">
-										<h5 className="recipe-title">
-											<Link to={`/recipe/${recipe.id}`}>
-												<strong>{recipe.title}</strong>
-											</Link>
-										</h5>
-										<p className="ingredients">
-											Ingredients:&nbsp;
-											{recipe.extendedIngredients.map((ingredient, ind) => {
-												var maxInd = recipe.extendedIngredients.length - 1;
-												if (ind === maxInd && maxInd >= MAX_INGREDIENTS_DISP)
-													return <span>{ingredient.name}...</span>;
-												else if (
-													ind !== maxInd &&
-													ind < MAX_INGREDIENTS_DISP - 1
-												)
-													return <span>{ingredient.name}, </span>;
-												else if (maxInd < MAX_INGREDIENTS_DISP)
-													return <span>{ingredient.name}</span>;
-											})}
-										</p>
+										<div className="float-left">
+											<h5 className="recipe-title">
+												<Link to={`/recipe/${recipe.id}`}>
+													<strong>{recipe.title}</strong>
+												</Link>
+											</h5>
+											<p className="ingredients">
+												Ingredients:&nbsp;
+												{recipe.extendedIngredients.map((ingredient, ind) => {
+													var maxInd = recipe.extendedIngredients.length - 1;
+													if (ind === maxInd && maxInd >= MAX_INGREDIENTS_DISP)
+														return <span>{ingredient.name}...</span>;
+													else if (
+														ind !== maxInd &&
+														ind < MAX_INGREDIENTS_DISP - 1
+													)
+														return <span>{ingredient.name}, </span>;
+													else if (maxInd < MAX_INGREDIENTS_DISP)
+														return <span>{ingredient.name}</span>;
+												})}
+											</p>
+											{recipe.glutenFree && (
+												<Badge bg="dark">Gluten Free</Badge>
+											)}
+											{recipe.dairyFree && <Badge bg="dark">Dairy Free</Badge>}
+											{recipe.vegan && <Badge bg="dark">Vegan</Badge>}
+											{recipe.veryHealthy && <Badge bg="dark">Healthy</Badge>}
+											{recipe.veryPopular && <Badge bg="dark">Popular</Badge>}
+											{recipe.cheap && <Badge bg="dark">Cheap</Badge>}
+										</div>
 									</div>
 								</Col>
 							</Row>

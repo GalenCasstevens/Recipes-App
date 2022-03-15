@@ -18,7 +18,7 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
-	background-color: #202142;
+	background-color: #00876e !important;
 	color: #fff;
 	line-height: 1.6;
 }
@@ -38,8 +38,17 @@ header {
 	padding: 0 20px;
 }
 
-.navbar-dark .navbar-brand a {
-	color: #fff;
+.float-left {
+	float: left;
+}
+
+nav.navbar {
+	padding: 0;
+	background-color: black !important;
+}
+
+.navbar-light .navbar-brand a {
+	color: #000;
 	text-decoration: none;
 }
 
@@ -50,6 +59,8 @@ header {
 
 li.list-group-item {
 	padding: 0;
+	background-color: #00ffd0;
+	color: white;
 }
 
 div.row > * {
@@ -112,10 +123,12 @@ li.active a {
 	padding-left: 10px;
 }
 
-.ingredients {
+p.ingredients {
 	font-family: Roboto;
 	font-size: 1.05em;
 	padding-right: 2px;
+	margin-bottom: 10px;
+	color: #000;
 }
 
 .recipe-detail-container {
@@ -123,7 +136,14 @@ li.active a {
 	padding-bottom: 30px;
 }
 
-/* img#recipe-detail-image.img-thumbnail {
-	margin: 0 auto;
-	display: block;
-} */
+.test {
+	float: right;
+}
+
+span.badge {
+	margin-right: 4px;
+}
+
+span.bg-dark {
+	background-color: #e600ff !important;
+}

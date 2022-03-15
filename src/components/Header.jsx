@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
 	return (
-		<Navbar bg="primary" variant="dark">
+		<Navbar bg="light" variant="light">
 			<Container>
 				<Navbar.Brand href="">
 					<Link to="/">
