@@ -3,6 +3,8 @@ import { ListGroup, Container, Row, Col, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
 import Pagination from './Pagination';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 function RecipeList() {
 	const MAX_INGREDIENTS_DISP = 5;
@@ -48,7 +50,7 @@ function RecipeList() {
 								<Col xs={2}>
 									<img src={recipe.image} alt="" />
 								</Col>
-								<Col xs={10}>
+								<Col xs={8}>
 									<div className="recipe-info">
 										<div className="float-left">
 											<h5 className="recipe-title">
@@ -72,14 +74,28 @@ function RecipeList() {
 												})}
 											</p>
 											{recipe.glutenFree && (
-												<Badge bg="dark">Gluten Free</Badge>
+												<Badge bg="primary">Gluten Free</Badge>
 											)}
-											{recipe.dairyFree && <Badge bg="dark">Dairy Free</Badge>}
-											{recipe.vegan && <Badge bg="dark">Vegan</Badge>}
-											{recipe.veryHealthy && <Badge bg="dark">Healthy</Badge>}
-											{recipe.veryPopular && <Badge bg="dark">Popular</Badge>}
-											{recipe.cheap && <Badge bg="dark">Cheap</Badge>}
+											{recipe.dairyFree && (
+												<Badge bg="primary">Dairy Free</Badge>
+											)}
+											{recipe.vegan && <Badge bg="primary">Vegan</Badge>}
+											{recipe.veryHealthy && (
+												<Badge bg="primary">Healthy</Badge>
+											)}
+											{recipe.veryPopular && (
+												<Badge bg="primary">Popular</Badge>
+											)}
+											{recipe.cheap && <Badge bg="primary">Cheap</Badge>}
 										</div>
+									</div>
+								</Col>
+								<Col xs={2}>
+									<div className="prep-time">
+										<FontAwesomeIcon icon={faClock} />
+										<span className="prep-minutes">
+											<strong>{recipe.readyInMinutes}m</strong>
+										</span>
 									</div>
 								</Col>
 							</Row>

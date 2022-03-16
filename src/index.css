@@ -18,7 +18,7 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
-	background-color: #00876e !important;
+	/* background-color: #00876e !important; */
 	color: #fff;
 	line-height: 1.6;
 }
@@ -42,13 +42,8 @@ header {
 	float: left;
 }
 
-nav.navbar {
-	padding: 0;
-	background-color: black !important;
-}
-
-.navbar-light .navbar-brand a {
-	color: #000;
+.navbar-dark .navbar-brand a {
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -59,7 +54,7 @@ nav.navbar {
 
 li.list-group-item {
 	padding: 0;
-	background-color: #00ffd0;
+	/* background-color: #00ffd0; */
 	color: white;
 }
 
@@ -75,6 +70,16 @@ ul.pagination {
 li.page-item {
 	border: none;
 }
+
+/* li.page-item.active .page-link {
+	color: #fff !important;
+	background-color: #000;
+	border-color: #000;
+}
+
+.page-item > .page-link {
+	color: black !important;
+} */
 
 .recipe-list-container {
 	max-width: 85%;
@@ -145,5 +150,23 @@ span.badge {
 }
 
 span.bg-dark {
-	background-color: #e600ff !important;
+	/* background-color: #e600ff !important; */
+}
+
+.fa-clock {
+	color: black;
+	font-size: 2em;
+}
+
+.prep-time {
+	margin: 0 auto;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+	float: right;
+}
+
+.prep-minutes {
+	color: black;
+	display: block;
 }
