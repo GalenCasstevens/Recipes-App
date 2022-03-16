@@ -1,5 +1,5 @@
 function Ingredients() {
-	return <div>From the ingredients component! x3</div>;
+	return <div>From the ingredients component!</div>;
 }
 
 export default Ingredients;

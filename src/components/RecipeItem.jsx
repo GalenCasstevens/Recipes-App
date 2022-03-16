@@ -1,3 +1,4 @@
+import PrepTime from './PrepTime';
 import { Link } from 'react-router-dom';
 import { Badge, ListGroup, Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -5,6 +6,7 @@ import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 function RecipeItem({ recipe }) {
 	const MAX_INGREDIENTS_DISP = 5;
+	const MIN_IN_HOUR = 60;
 
 	return (
 		<ListGroup.Item as="li">
@@ -43,12 +45,7 @@ function RecipeItem({ recipe }) {
 						</div>
 					</Col>
 					<Col xs={2}>
-						<div className="prep-time">
-							<FontAwesomeIcon icon={faClock} />
-							<span className="prep-minutes">
-								<strong>{recipe.readyInMinutes}m</strong>
-							</span>
-						</div>
+						<PrepTime minutes={recipe.readyInMinutes} />
 					</Col>
 				</Row>
 			</Container>
