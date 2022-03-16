@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
+import { Container, Col, Row } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import Ingredients from '../components/Ingredients';
 
 function RecipeDetail() {
 	const params = useParams();
@@ -30,7 +32,20 @@ function RecipeDetail() {
 		<div className="recipe-detail-container">
 			<h4 className="recipe-detail-title">{recipe.title}</h4>
 			<hr />
-			<Image id="recipe-detail-image" src={recipe.image} thumbnail={true} />
+			<Container fluid>
+				<Row>
+					<Col xs={4}>
+						<Image
+							id="recipe-detail-image"
+							src={recipe.image}
+							thumbnail={true}
+						/>
+					</Col>
+					<Col xs={8}>
+						<Ingredients />
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 }
