@@ -48,7 +48,8 @@ header {
 }
 
 .app-title,
-.recipe-detail-title {
+.recipe-detail-title,
+.ingredients-header {
 	font-family: 'Yellow Ginger';
 }
 
@@ -141,17 +142,23 @@ p.ingredients {
 	padding-bottom: 30px;
 }
 
-.test {
-	float: right;
+.ingredients-header {
+	margin-top: 20px;
+	font-size: 1.5em;
+}
+
+.ingredients-list {
+	margin-top: 10px;
+	font-size: 1.1em;
 }
 
 span.badge {
 	margin-right: 4px;
 }
 
-span.bg-dark {
-	/* background-color: #e600ff !important; */
-}
+/* span.bg-dark {
+	background-color: #e600ff !important;
+} */
 
 .fa-clock {
 	color: black;
@@ -177,4 +184,10 @@ span.bg-dark {
 .prep-minutes {
 	color: black;
 	display: block;
+}
+
+.instructions {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-size: 1.15em;
 }

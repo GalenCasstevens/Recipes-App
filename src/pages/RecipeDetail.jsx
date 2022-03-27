@@ -28,21 +28,38 @@ function RecipeDetail() {
 
 	if (!recipe || recipe.length === 0) return <p>No Recipe Yet</p>;
 
+	const stripHTMLFromString = (str) => {
+		return str.replace(/<\/?[^>]+(>|$)/g, '').trim();
+	};
+
 	return (
 		<div className="recipe-detail-container">
 			<h4 className="recipe-detail-title">{recipe.title}</h4>
 			<hr />
 			<Container fluid>
 				<Row>
-					<Col xs={4}>
+					<Col xs={12}>
 						<Image
 							id="recipe-detail-image"
 							src={recipe.image}
 							thumbnail={true}
 						/>
 					</Col>
-					<Col xs={8}>
-						<Ingredients />
+					<Col xs={8}></Col>
+				</Row>
+				<Row>
+					<Col xs={6}>
+						<h5 className="ingredients-header">Ingredients</h5>
+						<Ingredients
+							className="test2"
+							ingredients={recipe.extendedIngredients}
+						/>
+					</Col>
+					<Col xs={6}>
+						<p className="instructions">
+							<strong>Directions:</strong>{' '}
+							{stripHTMLFromString(recipe.instructions)}
+						</p>
 					</Col>
 				</Row>
 			</Container>
