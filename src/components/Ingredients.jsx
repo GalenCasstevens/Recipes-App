@@ -5,7 +5,7 @@ function Ingredients({ ingredients }) {
 		<ListGroup className="ingredients-list" as="ul">
 			{ingredients.map((ingredient) => (
 				<ListGroup.Item>
-					{ingredient.amount} {ingredient.unit} of {ingredient.name}
+					{ingredient.amount} {ingredient.unit} {ingredient.name}
 				</ListGroup.Item>
 			))}
 		</ListGroup>

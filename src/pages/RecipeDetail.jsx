@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import RecipeData from '../data/RecipeData';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Badge, Container, Col, Row } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import Ingredients from '../components/Ingredients';
 
 function RecipeDetail() {
 	const params = useParams();
 	const [recipe, setRecipe] = useState(
-		RecipeData.recipes.find((recipe) => recipe.id === 643129)
+		RecipeData.recipes.find((recipe) => recipe.id === 660266)
 	);
 
 	// useEffect(() => {
@@ -23,7 +23,6 @@ function RecipeDetail() {
 	// 	const data = await response.json();
 
 	// 	setRecipe(data);
-	// 	// setLoading(false);
 	// };
 
 	if (!recipe || recipe.length === 0) return <p>No Recipe Yet</p>;
@@ -38,14 +37,41 @@ function RecipeDetail() {
 			<hr />
 			<Container fluid>
 				<Row>
-					<Col xs={12}>
-						<Image
-							id="recipe-detail-image"
-							src={recipe.image}
-							thumbnail={true}
-						/>
+					<Col xs={5}>
+						<Image id="recipe-detail-img" src={recipe.image} thumbnail={true} />
 					</Col>
-					<Col xs={8}></Col>
+					<Col xs={7}>
+						<div className="recipe-info">
+							{recipe.cookingMinutes && (
+								<p className="recipe-detail-cook-time">
+									<strong>Cook Time:</strong> {recipe.cookingMinutes}
+								</p>
+							)}
+							{recipe.preparationMinutes && (
+								<p className="recipe-detail-prep-time">
+									<strong>Prep Time:</strong> {recipe.preparationMinutes}
+								</p>
+							)}
+							{recipe.readyInMinutes && (
+								<p className="recipe-detail-total-time">
+									<strong>Total Time:</strong> {recipe.readyInMinutes}
+								</p>
+							)}
+							{recipe.servings && (
+								<p className="recipe-detail-servings">
+									<strong>Servings:</strong> {recipe.servings}
+								</p>
+							)}
+							<div className="recipe-detail-badges">
+								{recipe.glutenFree && <Badge bg="primary">Gluten Free</Badge>}
+								{recipe.dairyFree && <Badge bg="primary">Dairy Free</Badge>}
+								{recipe.vegan && <Badge bg="primary">Vegan</Badge>}
+								{recipe.veryHealthy && <Badge bg="primary">Healthy</Badge>}
+								{recipe.veryPopular && <Badge bg="primary">Popular</Badge>}
+								{recipe.cheap && <Badge bg="primary">Cheap</Badge>}
+							</div>
+						</div>
+					</Col>
 				</Row>
 				<Row>
 					<Col xs={6}>
